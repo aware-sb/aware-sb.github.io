@@ -1,24 +1,23 @@
 :root{
+  --primary:#0d3b66;
+  --accent:#3a86ff;
   --bg:#f8fafc;
+  --card:#ffffff;
   --text:#1e293b;
   --muted:#64748b;
-  --brand:#0d3b66;
-  --brand-2:#3a86ff;
-  --card:#ffffff;
   --border:#e2e8f0;
-  --link:#3a86ff;
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#0b1020;
+    --card:#0f172a;
     --text:#e6edf3;
     --muted:#94a3b8;
-    --brand:#66aaff;
-    --brand-2:#8bb8ff;
-    --card:#0f172a;
+    --primary:#66aaff;
+    --accent:#8bb8ff;
     --border:#23314b;
-    --link:#8bb8ff;
   }
 }
 
@@ -29,24 +28,23 @@ html,body{
   padding:0;
   background:var(--bg);
   color:var(--text);
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
   line-height:1.65;
 }
 
+.container{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
 a{
-  color:var(--link);
+  color:var(--accent);
   text-decoration:none;
 }
 
 a:hover{ text-decoration:underline }
 
-.container{
-  width:min(1100px,92%);
-  margin-inline:auto;
-}
-
-/* ================= HEADER ================= */
-
+/* HEADER (identical style logic) */
 header{
   position:sticky;
   top:0;
@@ -63,40 +61,14 @@ header{
   padding:1rem 0;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:.75rem;
-  font-weight:700;
-}
-
-.nav ul{
-  list-style:none;
-  display:flex;
-  gap:1rem;
-  margin:0;
-  padding:0;
-}
-
-.nav a{
-  padding:.4rem .6rem;
-  border-radius:8px;
-}
-
-.nav a:hover{
-  background:var(--card);
-  text-decoration:none;
-}
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
   padding:4rem 0 3rem;
 }
 
 .hero h1{
   font-size:clamp(2rem,3vw + 1rem,3.2rem);
-  margin:.2rem 0 1rem;
+  margin-bottom:1rem;
 }
 
 .hero p{
@@ -104,12 +76,10 @@ header{
   max-width:60ch;
 }
 
-/* ================= BUTTONS ================= */
-
+/* BUTTONS */
 .btn{
   display:inline-flex;
   align-items:center;
-  gap:.5rem;
   padding:.65rem 1rem;
   border-radius:10px;
   border:1px solid var(--border);
@@ -118,47 +88,39 @@ header{
 }
 
 .btn.primary{
-  background:var(--brand);
+  background:var(--primary);
   color:white;
   border:none;
 }
 
-.btn:hover{
-  filter:brightness(.97);
-  text-decoration:none;
-}
-
-/* ================= SECTIONS ================= */
-
+/* SECTION */
 section{
   padding:3rem 0;
 }
 
 section h2{
   font-size:clamp(1.6rem,2vw + .8rem,2.2rem);
-  margin:0 0 1.5rem;
-  border-bottom:2px solid var(--brand-2);
+  margin-bottom:1.5rem;
+  border-bottom:2px solid var(--accent);
   padding-bottom:.5rem;
 }
 
-/* ================= CARDS ================= */
-
+/* CARD (same as publication year cards) */
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:16px;
+  border-radius:14px;
   padding:1.2rem;
-  box-shadow:0 6px 20px rgba(0,0,0,.04);
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
   transition:transform .2s ease, box-shadow .2s ease;
 }
 
 .card:hover{
   transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  box-shadow:0 8px 22px rgba(0,0,0,.07);
 }
 
-/* ================= GRID ================= */
-
+/* GRID */
 .grid{
   display:grid;
   gap:1.5rem;
@@ -177,57 +139,7 @@ section h2{
   }
 }
 
-/* ================= RESEARCH CARDS ================= */
-
-.research-card{
-  display:flex;
-  gap:2rem;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 6px 20px rgba(0,0,0,.04);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-
-.research-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 35px rgba(0,0,0,.07);
-}
-
-.research-image{
-  flex:0 0 40%;
-  min-height:260px;
-  background:#e2e8f0;
-}
-
-.research-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.research-content{
-  padding:2rem;
-}
-
-.research-meta{
-  display:flex;
-  gap:.5rem;
-  flex-wrap:wrap;
-  margin-top:1rem;
-}
-
-.research-tag{
-  font-size:.8rem;
-  padding:.3rem .6rem;
-  border-radius:999px;
-  background:white;
-  border:1px solid var(--border);
-}
-
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
   padding:2.5rem 0;
   border-top:1px solid var(--border);
