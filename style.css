@@ -38,6 +38,12 @@ header {
   align-items:center;
 }
 
+@media (max-width: 768px) {
+  .navbar img {
+    height: 32px;
+  }
+}
+
 /* ---------- Card System (Homepage) ---------- */
 
 .card-grid {
