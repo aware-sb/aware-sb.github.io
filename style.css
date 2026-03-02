@@ -1,12 +1,14 @@
 :root {
   --primary:#0d3b66;
   --accent:#3a86ff;
-  --bg:#ffffff;          /* match aware site white background */
+  --bg:#ffffff;
   --card:#ffffff;
   --text:#1e293b;
   --muted:#64748b;
   --border:#e2e8f0;
 }
+
+/* ---------- Global ---------- */
 
 * {
   box-sizing: border-box;
@@ -20,27 +22,57 @@ body {
   line-height:1.6;
 }
 
-/* Layout container */
 .container {
   width:min(1100px,92%);
   margin:auto;
 }
 
-/* Header */
+/* ---------- Header & Navigation ---------- */
+
 header {
   background:var(--primary);
   color:white;
   padding:1.2rem 0;
 }
 
-header h1 {
-  margin:0;
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-/* Page Titles */
-h1 {
-  margin-top:2rem;
+.brand {
+  display:flex;
+  align-items:center;
+  gap:.8rem;
 }
+
+.brand img {
+  height:42px;
+  width:auto;
+}
+
+.nav-links {
+  list-style:none;
+  display:flex;
+  gap:1.5rem;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a {
+  color:white;
+  font-weight:500;
+  text-decoration:none;
+}
+
+.nav-links a:hover {
+  text-decoration:underline;
+}
+
+/* ---------- Typography ---------- */
+
+h1 { margin:0; }
 
 h2 {
   border-bottom:2px solid var(--accent);
@@ -48,22 +80,65 @@ h2 {
 }
 
 h3 {
-  margin-top:1.2rem;
+  margin-top:0;
   color:var(--primary);
 }
 
-/* Year section card */
-.year {
-  background:var(--card);
-  margin:2rem 0;
-  padding:1.5rem;
-  border-radius:12px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.05);
-  border:1px solid var(--border);
+/* ---------- Sections ---------- */
+
+section {
+  margin:4rem 0;
 }
 
-/* Lists */
-ol {
+/* ---------- Card System ---------- */
+
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+}
+
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.5rem;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.card-accent {
+  height:4px;
+  width:40px;
+  background:var(--accent);
+  margin-bottom:1rem;
+  border-radius:2px;
+}
+
+.card-link {
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ---------- Member Cards ---------- */
+
+.member-card {
+  text-align:center;
+}
+
+.member-role {
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+/* ---------- Lists ---------- */
+
+ol, ul {
   padding-left:1.2rem;
 }
 
@@ -71,7 +146,8 @@ li {
   margin:.6rem 0;
 }
 
-/* Links */
+/* ---------- Links ---------- */
+
 a {
   color:var(--accent);
   text-decoration:none;
@@ -81,7 +157,38 @@ a:hover {
   text-decoration:underline;
 }
 
-/* Footer */
+/* ---------- Buttons ---------- */
+
+.btn {
+  display:inline-block;
+  margin-top:1.5rem;
+  padding:.6rem 1.2rem;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .2s ease;
+  border:1px solid var(--primary);
+  color:var(--primary);
+  background:white;
+}
+
+.btn:hover {
+  background:var(--primary);
+  color:white;
+}
+
+.btn-accent {
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+.btn-accent:hover {
+  background:var(--accent);
+  color:white;
+}
+
+/* ---------- Footer ---------- */
+
 footer {
   text-align:center;
   padding:2rem 0;
