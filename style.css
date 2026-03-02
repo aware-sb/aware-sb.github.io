@@ -1,25 +1,35 @@
 :root{
-  --primary:#0d3b66;
-  --accent:#3a86ff;
-  --bg:#f8fafc;
+  /* Deep academic navy */
+  --primary:#0b2545;
+  /* Clean medium blue accent */
+  --accent:#1d4ed8;
+  /* Very light cool gray background */
+  --bg:#f5f7fa;
+  /* Pure white cards */
   --card:#ffffff;
-  --text:#1e293b;
-  --muted:#64748b;
-  --border:#e2e8f0;
+  /* Deep slate text */
+  --text:#1f2937;
+  /* Soft secondary text */
+  --muted:#6b7280;
+  /* Subtle borders */
+  --border:#e5e7eb;
   --link:var(--accent);
 }
 
-/* Optional dark mode aligned with same palette */
+/* Dark mode — refined academic dark theme */
 @media (prefers-color-scheme: dark) {
   :root{
     --bg:#0f172a;
-    --text:#e2e8f0;
+    --text:#e5e7eb;
     --muted:#94a3b8;
-    --primary:#3a86ff;
-    --accent:#60a5fa;
+
+    /* Slightly brighter blue in dark mode */
+    --primary:#2563eb;
+    --accent:#3b82f6;
+
     --card:#1e293b;
     --border:#334155;
-    --link:#60a5fa;
+    --link:#3b82f6;
   }
 }
 
