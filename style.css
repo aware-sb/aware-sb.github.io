@@ -32,7 +32,7 @@ body {
 header {
   background:var(--primary);
   color:white;
-  padding:1.2rem 0;
+  padding:1.4rem 0;
 }
 
 .navbar {
@@ -50,6 +50,12 @@ header {
 .brand img {
   height:42px;
   width:auto;
+}
+
+.logo-large {
+  height: 72px;     /* Main size adjustment */
+  width: auto;
+  display: block;
 }
 
 .nav-links {
