@@ -1,324 +1,204 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AWARE Lab</title>
 
-  <title>AWARE @ Shubhendu Bhardwaj</title>
-  <meta name="description" content="AWARE-Shubhendu Bhardwaj" />
-  <meta name="theme-color" content="#0d3b66" />
+<link rel="stylesheet" href="style.css" />
 
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="AWARE: Advanced Wireless Aplications Research Lab" />
-  <meta property="og:description" content="Group homepage, members, research, publications, and contact." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR_USERNAME.github.io/YOUR_REPO/" />
-  <meta property="og:image" content="logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+<style>
+/* ---------- Navigation Layout ---------- */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-  <!-- Favicon (replace with your file in /assets) -->
-  <link rel="icon" href="assets/favicon.svg" />
- <link rel="stylesheet" href="style.css">
-  
+.nav-links {
+  list-style:none;
+  display:flex;
+  gap:1.5rem;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a {
+  color:white;
+  font-weight:500;
+}
+
+/* ---------- Section Spacing ---------- */
+section {
+  margin:4rem 0;
+}
+
+/* ---------- Card Grid (Research + Group) ---------- */
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+}
+
+/* Reusable Card */
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.5rem;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top:0;
+  color:var(--primary);
+}
+
+/* Subtle Accent Bar */
+.card-accent {
+  height:4px;
+  width:40px;
+  background:var(--accent);
+  margin-bottom:1rem;
+  border-radius:2px;
+}
+
+/* Group Members */
+.member-card {
+  text-align:center;
+}
+
+.member-role {
+  font-size:.9rem;
+  color:var(--muted);
+}
+</style>
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
 <header>
-  <div class="container nav" role="navigation" aria-label="Main">
-    
-    <div class="brand" style="display: flex; align-items: center; gap: 14px;">
-      
-      <!-- SVG Favicon from assets folder -->
-    
-<img src="assets/favicon.svg" 
-     alt="AWARE Lab Logo"
-     class="lab-logo">
-      
-      <!-- Text next to logo -->
-      <div>
-        <div style="font-weight: 700; font-size: 1.2rem;">AWARE Lab</div>
-        <div class="small" style="font-size: 0.9rem;">Shubhendu Bhardwaj</div>
-      </div>
+  <div class="container navbar">
+    <h1>AWARE Lab</h1>
 
-    </div>
-
-    <ul>
+    <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#members">Group Members</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#group">Group</a></li>
     </ul>
-
   </div>
 </header>
 
- <section id="home" class="hero">
-  <div class="container">
-    <h1>Advanced EM and Wireless Applications Research Lab (AWARE)</h1>
-    <p>
-      We explore applied and computational electromagnetics, RF/microwave engineering,
-      antennas, metamaterials, and electromagnetic compatibility. Our group solves
-      fundamental and applied problems with real-world impact.
-    </p>
+<main class="container">
 
-    <div class="cta">
-      <a class="btn primary" href="#members">Meet the Group</a>
-      <a class="btn" href="#research">Explore Research</a>
+<!-- HOME -->
+<section id="home">
+  <h2>Welcome</h2>
+  <p>
+    The Applied Wireless and Antenna Research (AWARE) Lab focuses on 
+    electromagnetics, antennas, RF systems, and physics-informed machine learning.
+  </p>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <h2>Research</h2>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3>Physics-Informed AI</h3>
+      <p>Data-free and physics-embedded neural networks for scientific computing.</p>
     </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3>Antennas & RF Systems</h3>
+      <p>Advanced antenna design, beamforming, and electromagnetic optimization.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3>Terahertz Devices</h3>
+      <p>Modeling of plasma-wave devices and terahertz waveguide systems.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <h3>Wireless Power Transfer</h3>
+      <p>Innovative RF power telemetry and wearable power harvesting systems.</p>
+    </div>
+
   </div>
 </section>
 
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2>Recent Publications</h2>
+  <ol>
+    <li>Physics embedded neural network: Novel data-free approach toward scientific computing.</li>
+    <li>Waveguide eigenanalysis using physics-informed neural networks.</li>
+    <li>Deep learning for antenna near-field prediction.</li>
+  </ol>
+</section>
 
+<!-- TEACHING -->
+<section id="teaching">
+  <h2>Teaching</h2>
+  <ul>
+    <li>Electromagnetics</li>
+    <li>Advanced Antenna Engineering</li>
+    <li>Computational Electromagnetics</li>
+  </ul>
+</section>
 
+<!-- GROUP -->
+<section id="group">
+  <h2>Group Members</h2>
 
-  <!-- <section id="research" class="research-section">
-  <div class="research-block">
-    <div class="research-image">
-      <img src="assets/img/placeholder1.jpg" alt="Research Image 1">
+  <div class="card-grid">
+
+    <div class="card member-card">
+      <h3>Dr. Shubhendu Bhardwaj</h3>
+      <div class="member-role">Lab Director</div>
     </div>
-    <div class="research-text">
-      <h2>Research Title One</h2>
-      <p>
-        This is a placeholder description for the first research topic. 
-        Replace this text with your actual research summary or details.
-      </p>
+
+    <div class="card member-card">
+      <h3>Pawan Gaire</h3>
+      <div class="member-role">PhD Student</div>
     </div>
-  </div>  -->
 
- 
-    <!-- Research Topics -->
-    <section id="research" class="container">
-      <h2>Research</h2>
-        <h2>Research Topic 1</h2>
-      <p class="small">Write text on the computationa topics</p>
-      <p class="small">More text on the computationa topics</p>
-
-       <h2>Research Topic 2</h2>
-      <p class="small">Write text on the computationa topics</p>
-      <p class="small">More text on the computationa topics</p>
-           <a class="btn" href="publications.html" target="_blank" rel="noopener">Complete List</a>
-    </section>
-
-
- <section id="research">
-  <div class="container">
-  <div class="research-cards">
-  <a href="#"
-     class="research-card-link">
-
-    <div class="research-card">
-
-      <div class="research-image">
-        <img src="https://via.placeholder.com/800x600"
-             alt="Explainable AI Research">
-      </div>
-
-      <div class="research-content">
-        <h3>Explainable AI</h3>
-        <p>
-          Research focused on interpretable machine learning systems,
-          transparency in deep learning, and trustworthy AI deployment.
-        </p>
-        <div class="research-meta">
-          <span class="research-tag">XAI</span>
-          <span class="research-tag">Trustworthy AI</span>
-          <span class="research-tag">Model Transparency</span>
-        </div>
-      </div>
-
+    <div class="card member-card">
+      <h3>Md Rayhan Khan</h3>
+      <div class="member-role">PhD Student</div>
     </div>
-  </a>
 
-  <a href="#"
-     class="research-card-link">
-
-    <div class="research-card">
-
-      <div class="research-image">
-        <img src="https://via.placeholder.com/800x600"
-             alt="Robust Machine Learning Research">
-      </div>
-
-      <div class="research-content">
-        <h3>Robust Machine Learning</h3>
-        <p>
-          Studying adversarial robustness, uncertainty estimation,
-          and reliable AI systems operating in real-world environments.
-        </p>
-        <div class="research-meta">
-          <span class="research-tag">Adversarial ML</span>
-          <span class="research-tag">Uncertainty</span>
-          <span class="research-tag">Safety</span>
-        </div>
-      </div>
-
+    <div class="card member-card">
+      <h3>Md Khadimul Islam</h3>
+      <div class="member-role">PhD Student</div>
     </div>
-  </a>
-</div>
- </section>
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="container">
-      <h2>Publications</h2>
-      <p class="small">Add selected publications here or link to a Google Scholar page.</p>
-      <ul>
-        <li><strong>Doe, J.</strong>, Singh, A., &amp; Bhardwaj, S. “Efficient Inverse Design for Metamaterial Antennas,” <em>IEEE TAP</em>, 2025.</li>
-        <li><strong>Patel, R.</strong> &amp; Bhardwaj, S. “EMC in Mixed-Signal Systems,” <em>EMC Magazine</em>, 2024.</li>
-      </ul>
-           <a class="btn" href="publications.html" target="_blank" rel="noopener">Complete List</a>
-    </section>
 
-    <!-- TEACHING -->
-    <section id="teaching" class="container">
-      <h2>Teaching</h2>
-      <ul>
-        <li>EE XXX: Electromagnetic Waves and Applications</li>
-        <li>EE YYY: Antennas and Propagation</li>
-      </ul>
-    </section>
+  </div>
+</section>
 
+</main>
 
-    
- <!-- GROUP MEMBERS -->
-<section id="members" class="container">
-      <h2>Group Members</h2>
+<footer>
+© <span id="year"></span> AWARE Lab
+</footer>
 
-      <div class="two-col">
-        <div>
-          <p class="small">
-            Below is a snapshot of our current team. To update this list, edit the
-            member cards in the HTML (or we can switch to a JSON file later).
-          </p>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-          <div class="grid" aria-live="polite">
-            <!-- Example Member Card -->
-            <article class="card">
-              <div class="avatar">
-                <!-- If you have a photo, replace with: <img src="assets/members/jane_doe.jpg" alt="Portrait of Jane Doe" width="68" height="68"> -->
-                JD
-              </div>
-              <div>
-                <h3>Jane Doe</h3>
-                <div class="role">Ph.D. Student • Antenna Design</div>
-                <div class="tags">
-                  <span class="tag">Metamaterials</span>
-                  <span class="tag">Optimization</span>
-                  <span class="tag">HFSS</span>
-                </div>
-                <div class="links">
-                  <a href="#" aria-label="Google Scholar for Jane Doe">Scholar</a>
-                  <a href="#" aria-label="LinkedIn for Jane Doe">LinkedIn</a>
-                  <a href="mailto:jdoe@example.edu">Email</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="avatar">AS</div>
-              <div>
-                <h3>Alex Singh</h3>
-                <div class="role">M.S. Student • EMC/EMI</div>
-                <div class="tags">
-                  <span class="tag">EMC</span>
-                  <span class="tag">Shielding</span>
-                </div>
-                <div class="links">
-                  <a href="#">Scholar</a>
-                  <a href="#">GitHub</a>
-                  <a href="mailto:asingh@example.edu">Email</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="avatar">RP</div>
-              <div>
-                <h3>Riya Patel</h3>
-                <div class="role">Undergraduate Researcher • RF Circuits</div>
-                <div class="tags">
-                  <span class="tag">RFIC</span>
-                  <span class="tag">Measurement</span>
-                </div>
-                <div class="links">
-                  <a href="#">LinkedIn</a>
-                  <a href="#">Portfolio</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Add more cards as needed -->
-          </div>
-        </div>  
-
-        <aside>
-          <div class="card" style="flex-direction:column">
-            <h3>Open Positions</h3>
-            <p class="small">
-              We welcome motivated students. If you’re interested in antennas, RF, or computational EM,
-              send your CV, transcript, and a brief statement of interests.
-            </p>
-            <a class="btn" href="#contact">Contact the PI</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-    
-    <!-- CONTACT -->
-    <section id="contact" class="container">
-      <h2>Contact</h2>
-      <div class="two-col">
-        <div>
-          <p>
-            <strong>Dr. Shubhendu Bhardwaj</strong><br>
-            Associate Professor<br>
-            <!-- Your department and university -->
-          </p>
-          <p>
-            Email: <a href="mailto:YOUR_EMAIL@university.edu">YOUR_EMAIL@university.edu</a><br>
-            Scholar: <a href="https://scholar.google.com/">Google Scholar</a><br>
-            LinkedIn: <a href="#">Profile</a>
-          </p>
-        </div>
-        <div class="card" style="flex-direction:column">
-          <h3>Find Us</h3>
-          <p class="small">
-            Lab location, building, and address here.
-          </p>
-          <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Open in Google Maps</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container">
-      <div>© <span id="year"></span> Applied Electromagnetics Lab (AEL). All rights reserved.</div>
-      <div class="small">Site generated for GitHub Pages. Last updated <span id="updated"></span>.</div>
-    </div>
-  </footer>
-
-  <script>
-    // Set year + last updated for convenience
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const d = new Date(document.lastModified);
-    document.getElementById('updated').textContent = d.toLocaleDateString(undefined,
-      {year:'numeric', month:'short', day:'2-digit'});
-
-    // Optional: smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){
-          e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
-          history.pushState(null, '', '#'+id);
-        }
-      })
-    });
-  </script>
 </body>
 </html>
