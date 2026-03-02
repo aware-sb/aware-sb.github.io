@@ -1,0 +1,99 @@
+:root {
+  --primary:#0d3b66;
+  --accent:#3a86ff;
+  --bg:#f5f7fb;              /* slightly softer than before */
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --border:#e2e8f0;
+}
+
+/* ---------- Base ---------- */
+
+body {
+  margin:0;
+  font-family: Georgia, "Times New Roman", serif; /* more academic tone */
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  font-size:17px;
+}
+
+/* ---------- Header ---------- */
+
+header {
+  background:var(--primary);
+  color:white;
+  padding:1.4rem 0;
+}
+
+.container {
+  width:min(980px,92%); /* slightly narrower for better readability */
+  margin:auto;
+}
+
+h1 {
+  margin-top:2.5rem;
+  font-weight:600;
+  letter-spacing:.3px;
+}
+
+/* ---------- Year Blocks ---------- */
+
+.year {
+  background:var(--card);
+  margin:2.2rem 0;
+  padding:1.8rem;
+  border:1px solid var(--border); /* cleaner than shadow-heavy */
+  border-radius:8px;              /* less rounded */
+}
+
+/* ---------- Headings ---------- */
+
+h2 {
+  font-size:1.6rem;
+  font-weight:600;
+  padding-bottom:.5rem;
+  border-bottom:2px solid var(--accent);
+  margin-bottom:1rem;
+}
+
+h3 {
+  margin-top:1.4rem;
+  font-size:.95rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--primary);
+}
+
+/* ---------- Lists ---------- */
+
+ol {
+  padding-left:1.4rem;
+  margin-top:.5rem;
+}
+
+li {
+  margin:.7rem 0;
+  line-height:1.8;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color:var(--accent);
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  text-align:center;
+  padding:2.2rem 0;
+  color:var(--muted);
+  font-size:.95rem;
+}
