@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     width="64"
+     height="64">
+
+  <!-- Background -->
+  <rect width="64"
+        height="64"
+        rx="14"
+        fill="#0d3b66"/>
+
+  <!-- Electromagnetic arcs -->
+  <path d="M18 26 Q32 12 46 26"
+        fill="none"
+        stroke="#3a86ff"
+        stroke-width="4"
+        stroke-linecap="round"/>
+
+  <path d="M22 28 Q32 18 42 28"
+        fill="none"
+        stroke="#4cc9f0"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+  <!-- Letter A -->
+  <path d="M32 20
+           L44 48
+           L38 48
+           L35 40
+           L29 40
+           L26 48
+           L20 48
+           Z"
+        fill="#ffffff"/>
+
+  <!-- Crossbar -->
+  <rect x="28" y="34"
+        width="8"
+        height="4"
+        fill="#ffffff"/>
+
+</svg>
