@@ -2,23 +2,25 @@
 
   <rect width="100%" height="100%" fill="white"/>
 
-  <defs>
-    <style>
-      .primary-stroke { stroke:#2C4368; stroke-width:8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-      .thin-stroke { stroke:#2C4368; stroke-width:6; fill:none; stroke-linecap:round; }
-
-      .ware { fill:#2C4368; font-size:170px; font-weight:700; font-family:Helvetica, Arial, sans-serif; }
-      .lab { fill:#2C4368; font-size:62px; font-weight:600; font-family:Helvetica, Arial, sans-serif; letter-spacing:1.5px; }
-      .tagline { fill:#444444; font-size:44px; font-family:Helvetica, Arial, sans-serif; }
-    </style>
-  </defs>
-
   <!-- A-shaped Antenna -->
   <g transform="translate(250,130)">
-    <path d="M40 360 L110 80 L180 360" class="primary-stroke"/>
+    <path d="M40 360 L110 80 L180 360"
+          stroke="#2C4368"
+          stroke-width="8"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
     <circle cx="110" cy="65" r="12" fill="#2C4368"/>
-    <path d="M75 60 A40 40 0 0 1 145 60" class="thin-stroke"/>
-    <path d="M60 35 A65 65 0 0 1 160 35" class="thin-stroke"/>
+    <path d="M75 60 A40 40 0 0 1 145 60"
+          stroke="#2C4368"
+          stroke-width="6"
+          fill="none"
+          stroke-linecap="round"/>
+    <path d="M60 35 A65 65 0 0 1 160 35"
+          stroke="#2C4368"
+          stroke-width="6"
+          fill="none"
+          stroke-linecap="round"/>
   </g>
 
   <!-- Symmetric Sine Wave (Amplitude ±12) -->
@@ -31,17 +33,36 @@
     C766.67 353, 803.33 353, 840 365
     C876.67 377, 913.33 377, 930 365
   "
-  stroke="#2C4368"
-  stroke-width="8"
-  fill="none"
-  stroke-linecap="round"/>
+        stroke="#2C4368"
+        stroke-width="8"
+        fill="none"
+        stroke-linecap="round"/>
 
-  <!-- Shared right alignment axis at x=930 -->
+  <!-- Text -->
+  <text x="930" y="335"
+        text-anchor="end"
+        fill="#2C4368"
+        font-size="170"
+        font-weight="700"
+        font-family="Helvetica, Arial, sans-serif">
+    WARE
+  </text>
 
-  <text x="930" y="335" text-anchor="end" class="ware">WARE</text>
-  <text x="930" y="440" text-anchor="end" class="lab">LAB</text>
+  <text x="930" y="440"
+        text-anchor="end"
+        fill="#2C4368"
+        font-size="62"
+        font-weight="600"
+        font-family="Helvetica, Arial, sans-serif"
+        letter-spacing="1.5">
+    LAB
+  </text>
 
-  <text x="600" y="600" text-anchor="middle" class="tagline">
+  <text x="600" y="600"
+        text-anchor="middle"
+        fill="#444444"
+        font-size="44"
+        font-family="Helvetica, Arial, sans-serif">
     <tspan x="600" dy="0">Advanced Wireless & Electromagnetic</tspan>
     <tspan x="600" dy="54">Systems Laboratory</tspan>
   </text>
