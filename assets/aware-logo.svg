@@ -1,8 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
 
-  <rect width="100%" height="100%" fill="white"/>
+  <rect width="1200" height="700" fill="white"/>
 
-  <!-- A-shaped Antenna -->
   <g transform="translate(250,130)">
     <path d="M40 360 L110 80 L180 360"
           stroke="#2C4368"
@@ -23,22 +23,18 @@
           stroke-linecap="round"/>
   </g>
 
-  <!-- Symmetric Sine Wave (Amplitude ±12) -->
-  <path d="
-    M290 365
-    C326.67 353, 363.33 353, 400 365
-    C436.67 377, 473.33 377, 510 365
-    C546.67 353, 583.33 353, 620 365
-    C656.67 377, 693.33 377, 730 365
-    C766.67 353, 803.33 353, 840 365
-    C876.67 377, 913.33 377, 930 365
-  "
+  <path d="M290 365
+           C326.67 353, 363.33 353, 400 365
+           C436.67 377, 473.33 377, 510 365
+           C546.67 353, 583.33 353, 620 365
+           C656.67 377, 693.33 377, 730 365
+           C766.67 353, 803.33 353, 840 365
+           C876.67 377, 913.33 377, 930 365"
         stroke="#2C4368"
         stroke-width="8"
         fill="none"
         stroke-linecap="round"/>
 
-  <!-- Text -->
   <text x="930" y="335"
         text-anchor="end"
         fill="#2C4368"
@@ -63,7 +59,7 @@
         fill="#444444"
         font-size="44"
         font-family="Helvetica, Arial, sans-serif">
-    <tspan x="600" dy="0">Advanced Wireless & Electromagnetic</tspan>
+    <tspan x="600" dy="0">Advanced Wireless &amp; Electromagnetic</tspan>
     <tspan x="600" dy="54">Systems Laboratory</tspan>
   </text>
 
