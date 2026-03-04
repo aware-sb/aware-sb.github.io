@@ -100,7 +100,9 @@ header{
 
 .nav{
   border-top:1px solid rgba(255,255,255,.15);
-  padding:.5rem 0 .9rem 0;
+  padding:.6rem 0 .9rem 0;
+  display:flex;
+  justify-content:center;
 }
 
 .nav ul{
@@ -115,14 +117,14 @@ header{
   color:white;
   text-decoration:none;
   font-weight:500;
-  padding:.4rem .7rem;
+  padding:.45rem .8rem;
   border-radius:6px;
   transition:background .2s ease, transform .2s ease;
 }
 
 .nav a:hover{
-  background:rgba(255,255,255,.18);
-  transform:translateY(-2px);
+  background:rgba(255,255,255,.20);
+  transform:translateY(-1px);
 }
 
 /* ---------- Responsive ---------- */
@@ -139,7 +141,15 @@ header{
     flex-wrap:wrap;
     justify-content:center;
   }
-
+  
+.nav ul{
+  display:flex;
+  gap:1.6rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+  
   .lab-logo{
     height:48px;
   }
