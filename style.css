@@ -150,6 +150,22 @@ header{
 
 }
 
+.hero p{
+  max-width:60ch;
+}
+
+section{
+  padding:2.8rem 0;
+}
+
+.hero{
+  border-bottom:1px solid var(--border);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 24px rgba(0,0,0,0.08);
+}
 /* ---------- Card System ---------- */
 
 .card-grid {
