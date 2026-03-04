@@ -19,22 +19,23 @@ body {
   font-size:17px;
 }
 
+/* CONTENT WIDTH DEFINED BY NAVIGATION */
+
 .container {
-  width:min(1100px,92%);
+  width:min(1050px,92%);
   margin:auto;
 }
 
 /* ---------- Header ---------- */
 
 header{
+  background:var(--primary);
   position:sticky;
   top:0;
   z-index:100;
-  background:var(--primary);
-  border-bottom:1px solid rgba(255,255,255,.15);
 }
 
-/* top branding row */
+/* TOP HEADER ROW */
 
 .header-top{
   display:flex;
@@ -43,12 +44,18 @@ header{
   padding:1rem 0 .6rem 0;
 }
 
-/* lab logo + university name */
+/* BRAND AREA */
 
-.brand{
+.brand-link{
   display:flex;
   align-items:center;
-  gap:1rem;
+  gap:14px;
+  text-decoration:none;
+  color:white;
+}
+
+.brand-link:hover{
+  opacity:.9;
 }
 
 .lab-logo{
@@ -56,13 +63,26 @@ header{
   width:auto;
 }
 
-.university{
-  font-size:.95rem;
-  color:rgba(255,255,255,.85);
-  font-weight:500;
+/* LAB TEXT */
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
 }
 
-/* unl logo */
+.lab-name{
+  font-size:1.3rem;
+  font-weight:700;
+  color:white;
+}
+
+.university{
+  font-size:.9rem;
+  color:rgba(255,255,255,.85);
+}
+
+/* UNL LOGO */
 
 .unl-logo{
   height:46px;
@@ -79,17 +99,16 @@ header{
 /* ---------- Navigation ---------- */
 
 .nav{
-  display:flex;
-  justify-content:center;
-  padding:.4rem 0 .9rem 0;
+  border-top:1px solid rgba(255,255,255,.15);
+  padding:.5rem 0 .9rem 0;
 }
 
 .nav ul{
   display:flex;
-  gap:1.6rem;
+  gap:1.4rem;
   list-style:none;
-  padding:0;
   margin:0;
+  padding:0;
 }
 
 .nav a{
@@ -106,7 +125,7 @@ header{
   transform:translateY(-2px);
 }
 
-/* ---------- Mobile ---------- */
+/* ---------- Responsive ---------- */
 
 @media (max-width:900px){
 
