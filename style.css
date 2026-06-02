@@ -54,7 +54,7 @@ header{
 }
 
 .lab-logo{
-  height:72px;
+  height:80px;
   width:auto;
 }
 
@@ -76,7 +76,7 @@ header{
 }
 
 .unl-logo{
-  height:72px;
+  height:80px;
   width:auto;
   opacity:.9;
   transition:opacity .2s ease, transform .2s ease;
