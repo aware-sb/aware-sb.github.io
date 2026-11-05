@@ -248,7 +248,7 @@ section{
 /* ---------- Headings ---------- */
 
 h2{
-  font-size:1.6rem;
+  font-size:2.5rem;
   font-weight:600;
   padding-bottom:.5rem;
   border-bottom:2px solid var(--accent);
