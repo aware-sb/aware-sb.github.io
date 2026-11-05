@@ -1,80 +1,106 @@
+/* ==========================================================
+   THEME COLORS
+   Change these variables to update colors across the site.
+   Styles using hard-coded colors must be edited separately.
+   ========================================================== */
+
 :root {
-  --primary:#0d3b66;
-  --accent:#3a86ff;
-  --bg:#f5f7fb;
-  --card:#ffffff;
-  --text:#1e293b;
-  --muted:#64748b;
-  --border:#e2e8f0;
+  --primary:#0d3b66; /* Header background and heading color */
+  --accent:#3a86ff;  /* Links and section heading underline */
+  --bg:#f5f7fb;      /* Main page background */
+  --card:#ffffff;    /* Standard card and publication backgrounds */
+  --text:#1e293b;    /* Main text color */
+  --muted:#64748b;   /* Secondary text, including footer */
+  --border:#e2e8f0;  /* Card borders and section dividers */
 }
 
-/* ---------- Base ---------- */
+/* ==========================================================
+   BASE: DEFAULT TYPOGRAPHY AND PAGE WIDTH
+   ========================================================== */
 
 body {
-  margin:0;
+  margin:0; /* Remove the browser's default outer margin */
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.75;
-  font-size:25px;
+  line-height:1.75; /* Space between lines of body text */
+  font-size:25px;  /* Default text size; inherited where not overridden */
 }
 
+/*
+   Shared content wrapper.
+   Change 1050px for the maximum content width.
+   Change 92% for the width on smaller screens.
+
+   Note: rem units elsewhere use the root HTML font size,
+   not the body's 25px font size.
+*/
 .container {
   width:min(1050px,92%);
-  margin:auto;
+  margin:auto; /* Center the content horizontally */
 }
 
-/* ---------- Header ---------- */
+/* ==========================================================
+   HEADER: BACKGROUND, POSITION, BRANDING AND LOGOS
+   ========================================================== */
 
+/* Sticky header remains at the top while scrolling */
 header{
   background:var(--primary);
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:100; /* Keep the header above ordinary page content */
   box-shadow:0 2px 10px rgba(0,0,0,0.06);
 }
 
+/* Top header row: lab branding on one side, university logo on the other */
 .header-top{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:1rem 0 .6rem 0;
+  padding:1rem 0 .6rem 0; /* Top, right, bottom, left spacing */
 }
 
+/* Clickable group containing the lab logo and lab name */
 .brand-link{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:14px; /* Space between the logo and brand text */
   text-decoration:none;
   color:white;
 }
 
 .brand-link:hover{
-  opacity:.9;
+  opacity:.9; /* Slightly fade branding on hover */
 }
 
+/* Main lab logo: change height to resize; width stays proportional */
 .lab-logo{
   height:80px;
   width:auto;
 }
 
+/* Stack lab name and university name vertically */
 .brand-text{
   display:flex;
   flex-direction:column;
   line-height:1.15;
 }
 
+/* Main lab name */
 .lab-name{
   font-size:1.8rem;
   font-weight:700;
   color:white;
 }
 
+/* Smaller university subtitle */
 .university{
   font-size:.9rem;
   color:rgba(255,255,255,.85);
 }
 
+/* University logo size and hover animation */
 .unl-logo{
   height:80px;
   width:auto;
@@ -84,16 +110,20 @@ header{
 
 .unl-logo:hover{
   opacity:1;
-  transform:translateY(-2px);
+  transform:translateY(-2px); /* Move upward on hover */
 }
 
+/* Shared shadow for both logos */
 .lab-logo,
 .unl-logo{
   filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
 }
 
-/* ---------- Navigation ---------- */
+/* ==========================================================
+   NAVIGATION: ALIGNMENT, LINK SPACING AND HOVER STATES
+   ========================================================== */
 
+/* Navigation row below the branding */
 .nav{
   border-top:1px solid rgba(255,255,255,.15);
   padding:.6rem 0 .9rem 0;
@@ -101,6 +131,7 @@ header{
   justify-content:center;
 }
 
+/* Horizontal menu; gap controls space between menu items */
 .nav ul{
   display:flex;
   gap:1.4rem;
@@ -109,35 +140,44 @@ header{
   padding:0;
 }
 
+/* Individual navigation links */
 .nav a{
   color:white;
   text-decoration:none;
   font-weight:500;
-  padding:.45rem .8rem;
+  padding:.45rem .8rem; /* Vertical and horizontal link padding */
   border-radius:6px;
   transition:background .2s ease, transform .2s ease;
 }
 
+/* Navigation hover background and movement */
 .nav a:hover{
   background:rgba(255,255,255,.20);
   transform:translateY(-1px);
 }
 
-/* ---------- Responsive ---------- */
+/* ==========================================================
+   RESPONSIVE HEADER: SCREENS 900px WIDE OR SMALLER
+   These rules override the desktop header styles above.
+   Change 900px to adjust when the compact layout begins.
+   ========================================================== */
 
 @media (max-width:900px){
 
+  /* Stack branding and university logo vertically */
   .header-top{
     flex-direction:column;
     gap:.8rem;
     text-align:center;
   }
 
+  /* Allow navigation links to wrap onto multiple rows */
   .nav ul{
     flex-wrap:wrap;
     justify-content:center;
   }
 
+  /* Smaller logos for narrow screens */
   .lab-logo{
     height:48px;
   }
@@ -148,15 +188,21 @@ header{
 
 }
 
-/* ---------- HERO SECTION ---------- */
+/* ==========================================================
+   HERO: INTRODUCTORY TEXT, BUTTON GROUP AND MAIN IMAGE
+   ========================================================== */
 
+/* Hero spacing and bottom divider */
 .hero{
   padding:4rem 0 2.5rem;
   border-bottom:1px solid var(--border);
 }
 
-/* modern two-column hero */
-
+/*
+   Two-column hero.
+   1.1fr .9fr makes the text column slightly wider than the image.
+   Use 1fr 1fr for equal columns; gap controls their separation.
+*/
 .hero-layout{
   display:grid;
   grid-template-columns:1.1fr .9fr;
@@ -164,14 +210,21 @@ header{
   align-items:center;
 }
 
+/* Limit the width of the hero's text block */
 .hero-text{
   max-width:620px;
 }
 
+/* Limit paragraph line length; ch is based on character width */
 .hero p{
   max-width:60ch;
 }
 
+/*
+   Call-to-action group.
+   Controls arrangement and spacing of links/buttons inside it;
+   individual button appearance is not defined here.
+*/
 .cta{
   display:flex;
   gap:.9rem;
@@ -179,16 +232,14 @@ header{
   flex-wrap:wrap;
 }
 
-/* hero image */
-
+/* Hero image fills its column; edit corners and shadow here */
 .hero-image img{
   width:100%;
   border-radius:14px;
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* responsive hero */
-
+/* Narrow-screen hero: one column with the image above the text */
 @media (max-width:900px){
 
   .hero-layout{
@@ -201,14 +252,24 @@ header{
 
 }
 
-/* ---------- Sections ---------- */
+/* ==========================================================
+   SECTIONS: SHARED VERTICAL SPACING
+   .hero has a more specific padding rule and keeps its own spacing.
+   ========================================================== */
 
 section{
   padding:2.8rem 0;
 }
 
-/* ---------- Card System ---------- */
+/* ==========================================================
+   STANDARD CARDS: GRID, SURFACE AND HOVER EFFECT
+   ========================================================== */
 
+/*
+   Automatically fit as many columns as available space allows.
+   Change 260px for the minimum card width.
+   Change gap for spacing between cards.
+*/
 .card-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -216,76 +277,97 @@ section{
   margin-top:1.5rem;
 }
 
+/* Standard card appearance */
 .card {
   background:var(--card);
   border:1px solid var(--border);
   border-radius:8px;
-  padding:1.6rem;
+  padding:1.6rem; /* Space inside each card */
   transition:transform .2s ease;
 }
 
+/* Lift and shadow when hovering over a card */
 .card:hover{
   transform:translateY(-5px);
   box-shadow:0 10px 24px rgba(0,0,0,0.08);
 }
 
+/*
+   Card heading overrides the global h3 margin-top, color and size.
+   Other global h3 styles, such as uppercase text, still apply.
+*/
 .card h3{
   margin-top:0;
   color:var(--primary);
   font-size:1.15rem;
 }
 
-/* ---------- Publications ---------- */
+/* ==========================================================
+   PUBLICATIONS: CONTAINER FOR EACH YEAR GROUP
+   ========================================================== */
 
 .year{
   background:var(--card);
-  margin:2.2rem 0;
-  padding:1.8rem;
+  margin:2.2rem 0; /* Space outside each year group */
+  padding:1.8rem;  /* Space inside each year group */
   border:1px solid var(--border);
   border-radius:8px;
 }
 
-/* ---------- Headings ---------- */
+/* ==========================================================
+   HEADINGS: SHARED SECTION AND SUBSECTION STYLES
+   ========================================================== */
 
+/* Main section headings with an accent-colored underline */
 h2{
   font-size:2.5rem;
   font-weight:600;
-  padding-bottom:.5rem;
+  padding-bottom:.5rem; /* Space between text and underline */
   border-bottom:2px solid var(--accent);
   margin-bottom:1rem;
 }
 
+/* Subsection headings; remove text-transform to preserve normal case */
 h3{
   margin-top:1.4rem;
   font-size:.95rem;
-  letter-spacing:.08em;
+  letter-spacing:.08em; /* Space between letters */
   text-transform:uppercase;
   color:var(--primary);
 }
 
-/* ---------- Lists ---------- */
+/* ==========================================================
+   LISTS: INDENTATION AND ITEM SPACING
+   These rules also affect list items within navigation.
+   ========================================================== */
 
 ol, ul{
   padding-left:1.4rem;
 }
 
 li{
-  margin:.75rem 0;
+  margin:.75rem 0; /* Vertical space outside each list item */
   line-height:1.8;
 }
 
-/* ---------- Links ---------- */
+/* ==========================================================
+   LINKS: DEFAULT COLOR AND HOVER UNDERLINE
+   More specific selectors above can override these defaults.
+   ========================================================== */
 
 a{
   color:var(--accent);
   text-decoration:none;
 }
 
+/* Applies to navigation and branding links too */
 a:hover{
   text-decoration:underline;
 }
 
-/* ---------- Footer ---------- */
+/* ==========================================================
+   FOOTER: ALIGNMENT, SPACING AND SECONDARY TEXT
+   ========================================================== */
 
 footer{
   text-align:center;
@@ -294,49 +376,60 @@ footer{
   font-size:.95rem;
 }
 
-/* Course grid */
+/* ==========================================================
+   COURSE GRID: RESPONSIVE COURSE CARD LAYOUT
+   Separate from the standard .card-grid above.
+   ========================================================== */
 
+/* Change 280px for minimum card width; 28px for space between cards */
 .course-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:28px;
-margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+  margin-top:30px;
 }
 
+/* ==========================================================
+   COURSE CARDS: SURFACE, TITLES AND METADATA
+   Colors here are hard-coded and do not use the theme variables.
+   ========================================================== */
 
-/* Course card */
-
+/* Course card background, border, corners and inner spacing */
 .course-card{
-background:white;
-border:1px solid #e5e5e5;
-border-radius:10px;
-padding:24px;
-transition:all .2s ease;
-box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  background:white;
+  border:1px solid #e5e5e5;
+  border-radius:10px;
+  padding:24px;
+  transition:all .2s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
 }
 
-
+/* Course card lift and stronger shadow on hover */
 .course-card:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 18px rgba(0,0,0,0.08);
+  transform:translateY(-4px);
+  box-shadow:0 8px 18px rgba(0,0,0,0.08);
 }
 
-
+/*
+   Course heading, such as a course code.
+   Change #c8102e to update its red color.
+   Global h3 uppercase and letter-spacing styles still apply.
+*/
 .course-card h3{
-margin:0;
-font-size:20px;
-color:#c8102e;
+  margin:0;
+  font-size:20px;
+  color:#c8102e;
 }
 
-
+/* Course name below the heading */
 .course-title{
-font-weight:600;
-margin:6px 0 10px 0;
+  font-weight:600;
+  margin:6px 0 10px 0;
 }
 
-
+/* Supporting details, such as semester, credits or meeting time */
 .course-meta{
-margin-top:14px;
-font-size:14px;
-color:#666;
+  margin-top:14px;
+  font-size:14px;
+  color:#666;
 }
