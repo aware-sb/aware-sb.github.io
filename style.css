@@ -188,131 +188,107 @@ header{
 
 }
 
-/* ==========================================
-   HERO SECTION
-   Full-width background image with text overlay
-   ========================================== */
+/* ==========================================================
+   HERO: FULL-WIDTH IMAGE, HEADING, DESCRIPTION AND BUTTONS
+   Keep all hero adjustments together in this block.
 
-.hero{
-  /* Background image with a light overlay */
-  background:
+   Expected HTML:
+   <section id="home" class="hero"
+            style="--hero-image: url('assets/NN_vortex.png')">
+     <div class="hero-content">
+       <h1 class="hero-title">...</h1>
+       <p class="hero-description">...</p>
+       <div class="cta">...</div>
+     </div>
+   </section>
+
+   The image path in the HTML is relative to the HTML page.
+   This avoids differences between HTML and CSS asset paths.
+   ========================================================== */
+
+/* Full-bleed background, even though the hero is inside main.container */
+#home.hero{
+  /* 0.45 = light translucent overlay; lower values show more image */
+  background-image:
     linear-gradient(
-      rgba(245,247,251,0.82),
-      rgba(245,247,251,0.82)
+      rgba(245,247,251,0.45),
+      rgba(245,247,251,0.45)
     ),
-    url("images/hero-image.jpg");
+    var(--hero-image);
 
-  /* Make background fill the hero */
-  background-size:cover;
-
-  /* Center background image */
+  background-color:var(--bg); /* Fallback while the image loads */
+  background-size:cover; /* Fill the hero; some edges may be cropped */
   background-position:center;
-
-  /* Prevent image repetition */
   background-repeat:no-repeat;
 
-  /* Space inside the hero */
-  padding:5rem 0;
+  /* Extend only this section to the viewport edges */
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  box-sizing:border-box;
 
-  /* Minimum hero height */
+  /* Hero height and spacing */
   min-height:550px;
+  padding:4rem 2rem;
 
-  /* Center contents vertically */
-  display:flex;
-  align-items:center;
-
+  /* Single content area, not the original two-column layout */
+  display:block;
   border-bottom:1px solid var(--border);
 }
 
-
-/* ==========================================
-   HERO TITLE
-   Full-width and horizontally centered
-   ========================================== */
-
-.hero-title{
+/* Center the complete hero block; change 1400px to adjust its width */
+#home .hero-content{
+  display:block;
   width:100%;
+  max-width:1400px;
+  margin:0 auto;
   text-align:center;
+}
 
-  /* Space below title */
-  margin:0 auto 3rem;
-
-  /* Responsive title size */
-  font-size:clamp(2rem,4vw,4rem);
-
+/* Title stretches across the content, above the paragraph */
+#home .hero-title{
+  width:100%;
+  max-width:none;
+  margin:0 auto 2.5rem;
+  text-align:center;
+  font-size:clamp(2rem,3.5vw,4rem);
   line-height:1.25;
-
   color:var(--text);
 }
 
-
-/* ==========================================
-   HERO TEXT
-   Center description over background
-   ========================================== */
-
-.hero-text{
-  /* Limit text width */
-  max-width:850px;
-
-  /* Center text container */
+/* Wide paragraph beneath the title; change 1100px for line length */
+#home .hero-description{
+  width:100%;
+  max-width:1100px;
   margin:0 auto;
-
-  /* Center paragraph text */
   text-align:center;
+  font-size:clamp(1.1rem,1.7vw,1.65rem);
+  line-height:1.7;
+  color:var(--text);
 }
 
-
-/* ==========================================
-   HERO PARAGRAPH
-   ========================================== */
-
-.hero p{
-  max-width:65ch;
-
-  /* Center paragraph */
-  margin:0 auto;
-
-  line-height:1.8;
-}
-
-
-/* ==========================================
-   HERO BUTTONS
-   ========================================== */
-
+/* Preserve the original .cta styling wherever this class is used */
 .cta{
   display:flex;
-
-  /* Center buttons */
   justify-content:center;
-
   gap:1rem;
   margin-top:2rem;
-
   flex-wrap:wrap;
 }
 
-
-/* ==========================================
-   MOBILE RESPONSIVE DESIGN
-   ========================================== */
-
+/* Narrow screens: adjust only the hero, not the site header or cards */
 @media (max-width:900px){
-
-  .hero{
-    padding:3rem 0;
+  #home.hero{
     min-height:450px;
+    padding:3rem 1.5rem;
   }
 
-  .hero-title{
+  #home .hero-title{
     font-size:clamp(1.8rem,5vw,2.8rem);
   }
 
-  .hero-text{
-    max-width:100%;
+  #home .hero-description{
+    font-size:1.1rem;
   }
-
 }
 
 /* ==========================================================
